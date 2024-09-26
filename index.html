@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Music Player</title>
+  </head>
+  <body>
+    <div id="app">
+      
+      <div class="player w-screen h-screen flex justify-center items-center">
+
+        <div class="wrapper border-gray-500 border-[1px] p-5 shadow-black shadow-md rounded-md">
+
+          <div class="details flex flex-col items-center ">
+            <div class="now-playing text-base uppercase tracking-[5px] font-bold">playing</div>
+            <div class="track-art m-[25px] h-[250px] w-[250px] border-[1px] border-gray-300 bg-cover bg-center rounded-full shadow-md shadow-slate-950 border-x-2 border-t-white border-r-white border-l-white animate-spin"></div>
+            <div class="track-name mt-1 text-xl uppercase font-semibold">Track Name</div>
+            <div class="track-artist text-xs uppercase">Track artist</div>
+          </div>
+
+          <div class="slider_container flex justify-center items-center">
+            <div class="current-time p-3">00:00</div>
+            <input type="range" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
+            <div class="total-duration p-3">00:00</div>
+          </div>
+
+          <div class="slider_container flex justify-center items-center">
+            <i class="fa fa-volume-down p-2"></i>
+            <input type="range" min="1" max="100" value="80" class="volume_slider" onchange="setVolume()">
+            <i class="fa fa-volume-up p-2"></i>
+          </div>
+
+          <div class="buttons flex items-center justify-between w-full">
+            
+            <div class="random-track p-6 cursor-pointer" onclick="randomTrack()">
+                <i class="fas fa-random fa-2x" title="Random"></i>
+            </div>
+            
+            <div class="prev-track p-6 cursor-pointer" onclick="prevTrack()">
+              <i class="fa fa-step-backward fa-2x"></i>
+            </div>
+
+            <div class="playpause-track p-6 cursor-pointer" onclick="playPauseTrack()">
+              <i class="fa fa-play-circle fa-5x"></i>
+            </div>
+
+            <div class="next-track p-6 cursor-pointer" onclick="nextTrack()">
+              <i class="fa fa-step-forward fa-2x"></i>
+            </div>
+              
+
+            <div class="repeat-track p-6 cursor-pointer" onclick="repeatTrack()">
+              <i class="fa fa-repeat fa-2x"></i>
+            </div>
+              
+            </div>
+
+          </div>
+
+          <div id="wave">
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
